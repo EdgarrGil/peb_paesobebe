@@ -25,7 +25,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg">
                   This platform was born from the realization that while other spaces celebrate different cultures, 
-                  there wasn't a dedicated place for us—a space that truly represents the creativity, energy, and stories 
+                  there wasn&apos;t a dedicated place for us—a space that truly represents the creativity, energy, and stories 
                   of Spanish-speaking people. PaEsoBebe was created to fill that gap, to amplify our voices, and to shine 
                   a spotlight on the diversity and brilliance of our community.
                 </p>
@@ -48,7 +48,7 @@ export default function AboutPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-[var(--primary)] inline-block pb-1">Join Us</h2>
                 <p className="text-lg">
-                  Whether you're an artist, a fan, or someone who loves Latin urban culture, PaEsoBebe invites you to be part of our growing community. 
+                  Whether you&apos;re an artist, a fan, or someone who loves Latin urban culture, PaEsoBebe invites you to be part of our growing community. 
                   Share your talent, discover new creators, and help us continue to showcase the beauty and power of our culture.
                 </p>
                 <div className="flex justify-center mt-8">
