@@ -23,6 +23,15 @@ const HeroSlider = () => {
       ctaText: "WATCH NOW",
       ctaLink: "/nightlife"
     }
+    ,
+    { 
+      id: 3, 
+      title: "NIGHTLIFE VIBES",
+      description: "Experience the energy of the city after dark",
+      image: "https://res.cloudinary.com/dwzhqvxaz/image/upload/c_pad,w_1500,ar_2,q_auto,f_auto,b_auto/umbraco-prod/j5wlde24/10-12-el-alfa_mobile-hero_1500x750_sfc.jpg",
+      ctaText: "WATCH NOW",
+      ctaLink: "/nightlife"
+    }
   ];
 
   useEffect(() => {
