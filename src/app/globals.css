@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
 :root {
+  /* Default theme - Urban Gold */
+  --background: #f6f6f6;
+  --background-alt: #ffffff;
+  --foreground: #ededed;
+  --primary: #eab308;
+  --primary-hover: #ca8a04;
+  --secondary: #18181b;
+  --accent: #eab308;
+  --text: #111111;
+  --text-secondary: #4b5563;
+  --border: #d1d5db;
+}
+
+/* Background Themes */
+[data-bg="dark"] {
+  --background: #0a0a0a;
+  --background-alt: #18181b;
+  --foreground: #ededed;
+  --secondary: #18181b;
+  --text: #ffffff;
+  --text-secondary: #9ca3af;
+  --border: #27272a;
+}
+
+[data-bg="darker"] {
+  --background: #000000;
+  --background-alt: #111111;
+  --foreground: #ededed;
+  --secondary: #111111;
+  --text: #ffffff;
+  --text-secondary: #9ca3af;
+  --border: #27272a;
+}
+
+[data-bg="gray"] {
+  --background: #1f2937;
+  --background-alt: #374151;
+  --foreground: #f9fafb;
+  --secondary: #374151;
+  --text: #ffffff;
+  --text-secondary: #9ca3af;
+  --border: #4b5563;
+}
+
+[data-bg="navy"] {
+  --background: #0f172a;
+  --background-alt: #1e293b;
+  --foreground: #f8fafc;
+  --secondary: #1e293b;
+  --text: #ffffff;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+[data-bg="purple"] {
+  --background: #2e1065;
+  --background-alt: #4c1d95;
+  --foreground: #f5f3ff;
+  --secondary: #4c1d95;
+  --text: #ffffff;
+  --text-secondary: #c4b5fd;
+  --border: #6d28d9;
+}
+
+[data-bg="slate"] {
+  --background: #121826;
+  --background-alt: #1e293b;
+  --foreground: #f1f5f9;
+  --secondary: #1e293b;
+  --text: #ffffff;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+[data-bg="white"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-alt: #f3f4f6;
+  --foreground: #111111;
+  --secondary: #f3f4f6;
+  --text: #111111;
+  --text-secondary: #4b5563;
+  --border: #e5e7eb;
+}
+
+[data-bg="light-gray"] {
+  --background: #e5e7eb;
+  --background-alt: #f3f4f6;
+  --foreground: #111827;
+  --secondary: #d1d5db;
+  --text: #111111;
+  --text-secondary: #4b5563;
+  --border: #d1d5db;
+}
+
+[data-bg="forest"] {
+  --background: #0b5e2b;
+  --background-alt: #166534;
+  --foreground: #f0fdf4;
+  --secondary: #166534;
+  --text: #ffffff;
+  --text-secondary: #86efac;
+  --border: #15803d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Text shadow utilities for hero section readability */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-xl {
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white px-4 py-2 rounded-sm hover:bg-[var(--primary-hover)] transition font-bold;
+  }
+  
+  .btn-secondary {
+    @apply bg-zinc-800 text-gray-300 px-4 py-2 rounded-sm hover:bg-zinc-700 transition;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-hover);
 }
