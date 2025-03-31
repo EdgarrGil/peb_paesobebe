@@ -174,8 +174,16 @@ export default function VideoPage({ params }) {
   const placeholderImage = videoData.thumbnailUrl || "https://via.placeholder.com/1280x720";
 
   const handlePlayPause = () => {
-    // Simply toggle the playing state - no need for videoRef since we're using an iframe
-    setIsPlaying(!isPlaying);
+    // Toggle video playing state
+    setIsPlaying(true);
+    
+    // Force touch interaction to complete on mobile devices
+    // before showing YouTube iframe
+    if ('ontouchstart' in window) {
+      setTimeout(() => {
+        setIsPlaying(true);
+      }, 50);
+    }
   };
 
   const handleCommentSubmit = (e) => {
@@ -222,10 +230,11 @@ export default function VideoPage({ params }) {
                   />
                   <button 
                     onClick={handlePlayPause}
-                    className="absolute inset-0 flex items-center justify-center group"
+                    className="absolute inset-0 flex items-center justify-center group cursor-pointer"
+                    aria-label="Play video"
                   >
-                    <div className="w-24 h-24 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg transform transition-all group-hover:scale-110 group-hover:bg-[var(--primary-hover)]">
-                      <svg className="w-12 h-12 text-white translate-x-1" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-[var(--primary)] flex items-center justify-center shadow-lg transform transition-all group-hover:scale-110 group-hover:bg-[var(--primary-hover)]">
+                      <svg className="w-8 h-8 sm:w-12 sm:h-12 text-white translate-x-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
@@ -235,11 +244,12 @@ export default function VideoPage({ params }) {
             ) : (
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${videoData.videoId || '8Y1GKpC2ZtQ'}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${videoData.videoId || '8Y1GKpC2ZtQ'}?autoplay=1&playsinline=1&rel=0&modestbranding=1`}
                 title={videoData.title}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; playsinline"
                 allowFullScreen
+                playsInline
               ></iframe>
             )}
           </div>
