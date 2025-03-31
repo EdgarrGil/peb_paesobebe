@@ -5,7 +5,7 @@ import Image from 'next/image';
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Updated slides with urban culture focus
+  // Updated slides with only two slides - removed STREET STYLE
   const slides = [
     { 
       id: 1, 
@@ -22,14 +22,6 @@ const HeroSlider = () => {
       image: "https://i.ytimg.com/vi/4vZqO7luLUs/maxresdefault.jpg",
       ctaText: "WATCH NOW",
       ctaLink: "/nightlife"
-    },
-    { 
-      id: 3, 
-      title: "STREET STYLE",
-      description: "The fashion and lifestyle defining a generation",
-      image: "https://res.cloudinary.com/dwzhqvxaz/image/upload/c_pad,w_1500,ar_2,q_auto,f_auto,b_auto/umbraco-prod/j5wlde24/10-12-el-alfa_mobile-hero_1500x750_sfc.jpg",
-      ctaText: "GET INSPIRED",
-      ctaLink: "/style"
     }
   ];
 
@@ -80,11 +72,11 @@ const HeroSlider = () => {
                 <div className="absolute inset-0 bg-black/10 sm:bg-black/20"></div>
               </div>
               
-              {/* Content with responsive text sizes */}
-              <div className="absolute inset-0 flex items-center z-10">
+              {/* Content with responsive text sizes - hidden on mobile */}
+              <div className="absolute inset-0 hidden sm:flex items-center z-10">
                 <div className="container mx-auto px-4 md:px-12">
-                  <div className="max-w-xl sm:backdrop-blur-sm bg-black/20 sm:bg-black/30 p-4 md:p-6 rounded-sm">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-4 text-white uppercase tracking-tight">{slide.title}</h2>
+                  <div className="max-w-xl backdrop-blur-sm bg-black/30 p-4 md:p-6 rounded-sm">
+                    <h2 className="text-4xl md:text-5xl font-black mb-2 md:mb-4 text-white uppercase tracking-tight">{slide.title}</h2>
                     <p className="text-lg md:text-xl mb-4 md:mb-6 text-white">{slide.description}</p>
                     <button className="bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-sm font-bold transition-colors shadow-lg uppercase tracking-wide text-sm md:text-base">
                       {slide.ctaText}
