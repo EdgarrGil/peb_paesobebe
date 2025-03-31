@@ -77,13 +77,13 @@ const HeroSlider = () => {
                   className="object-cover"
                 />
                 {/* Optional dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute inset-0 bg-black/10 sm:bg-black/20"></div>
               </div>
               
               {/* Content with responsive text sizes */}
               <div className="absolute inset-0 flex items-center z-10">
                 <div className="container mx-auto px-4 md:px-12">
-                  <div className="max-w-xl backdrop-blur-sm bg-black/30 p-4 md:p-6 rounded-sm">
+                  <div className="max-w-xl sm:backdrop-blur-sm bg-black/20 sm:bg-black/30 p-4 md:p-6 rounded-sm">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 md:mb-4 text-white uppercase tracking-tight">{slide.title}</h2>
                     <p className="text-lg md:text-xl mb-4 md:mb-6 text-white">{slide.description}</p>
                     <button className="bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-sm font-bold transition-colors shadow-lg uppercase tracking-wide text-sm md:text-base">
