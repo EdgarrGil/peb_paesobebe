@@ -213,9 +213,11 @@ export default function VideoPage({ params }) {
                 {/* Actual thumbnail */}
                 <div className="relative z-20 w-full h-full flex items-center justify-center">
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                  <img 
+                  <Image 
                     src={`https://img.youtube.com/vi/${videoData.videoId}/maxresdefault.jpg`}
                     alt={videoData.title}
+                    width={1280}
+                    height={720}
                     className="w-full h-full object-contain max-h-[80vh]"
                   />
                   <button 
@@ -470,7 +472,7 @@ export default function VideoPage({ params }) {
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-2 py-1 rounded">10:12</div>
                     </div>
                     <h4 className="text-[var(--text)] group-hover:text-[var(--primary)] transition line-clamp-2 font-medium mb-1">
-                      Behind the Scenes: Making of "La Última"
+                      Behind the Scenes: Making of &ldquo;La Última&rdquo;
                     </h4>
                     <p className="text-[var(--text-secondary)] text-sm flex items-center">
                       <svg className="w-4 h-4 mr-1 text-[var(--primary)]" fill="currentColor" viewBox="0 0 24 24">

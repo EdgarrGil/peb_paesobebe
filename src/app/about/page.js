@@ -20,8 +20,8 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-bold border-b-2 border-[var(--primary)] inline-block pb-1">Our Story</h2>
                 <p className="text-lg">
                   PaEsoBebe started as a simple idea inspired by a passion for Latin urban culture and a desire to create 
-                  something unique for our community. The name comes from a saying that reminds us to embrace life's 
-                  moments and enjoy them to the fullest: "Pa' eso bebe!"
+                  something unique for our community. The name comes from a saying that reminds us to embrace life&apos;s 
+                  moments and enjoy them to the fullest: &ldquo;Pa&apos; eso bebe!&rdquo;
                 </p>
                 <p className="text-lg">
                   This platform was born from the realization that while other spaces celebrate different cultures, 

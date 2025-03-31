@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { format, subDays } from 'date-fns';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const VideoGrid = () => {
   // Video data with Dominican/Spanish cultural content
@@ -314,9 +315,11 @@ const VideoGrid = () => {
                 <Link href={`/video/${video.id}`} key={video.id} className="group bg-[var(--background-alt)] rounded-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                   {/* Video thumbnail with duration */}
                   <div className="relative aspect-video">
-                    <img
+                    <Image
                       src={video.thumbnail}
                       alt={video.title}
+                      width={320}
+                      height={180}
                       className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all"></div>

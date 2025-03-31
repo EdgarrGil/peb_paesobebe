@@ -53,7 +53,7 @@ export default function ContactPage() {
                 <path d="M5 13l4 4L19 7"></path>
               </svg>
               <h3 className="text-2xl font-bold text-[var(--text)] mb-2">Message Sent!</h3>
-              <p className="text-[var(--text-secondary)]">Thank you for reaching out. We'll get back to you soon.</p>
+              <p className="text-[var(--text-secondary)]">Thank you for reaching out. We&apos;ll get back to you soon.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">

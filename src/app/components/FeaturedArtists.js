@@ -62,9 +62,11 @@ const FeaturedArtists = () => {
           {artists.map((artist) => (
             <div key={artist.id} className="group">
               <div className="rounded-full overflow-hidden w-48 h-48 mx-auto mb-4 relative shadow-md">
-                <img
+                <Image
                   src={artist.image}
                   alt={artist.name}
+                  width={192}
+                  height={192}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-indigo-600 bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 rounded-full"></div>
